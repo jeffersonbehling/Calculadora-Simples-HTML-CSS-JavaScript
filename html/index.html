@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/layout.css" />
     <title>Calculadora</title>
+    <script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
     <script type="text/javascript">
       function populaTela(valor) {
         document.getElementById("display").value += valor;
@@ -18,6 +19,14 @@
           limpaTela("Erro!");
         }
       }
+     function deleteLastNumber() {
+        var length = $('#display').val().length-1;
+        var text = $('#display').val();
+        var new_text = text.substring(0,length);
+
+        $('#display').val(new_text);
+        
+        };
     </script>
   </head>
   <body>
@@ -29,7 +38,7 @@
         <p>
           <input type="button" class="botao nulo" value="">
           <input type="button" class="botao nulo" value="">
-          <input type="button" class="botao nulo" value="">
+          <input type="button" class="botao operacoes" value="←" id="delete" onclick='deleteLastNumber()'>
           <input type="button" class="botao operacoes" value="/" onclick='populaTela("/")'>
         </p>
         <p>
