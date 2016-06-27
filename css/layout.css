@@ -34,6 +34,9 @@ body{
   position: relative;
   top: 30px;
 }
+input.botao:hover {
+  background: #505050; 
+}
 .botao{
   font-weight: bolder;
   font-size: 20px;
